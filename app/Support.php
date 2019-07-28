@@ -13,12 +13,17 @@ class Support extends Model
 
 	public function rewards()
 	{
-		return $this->belongsTo('App\Reward','id');//rewardsテーブルとのリレーション
+		return $this->belongsTo('App\Reward', 'id');//rewardsテーブルとのリレーション
 	}
 
 	public function projects()
 	{
-		return $this->belongsTo('App\Project','id'); //projectsテーブルとのリレーション
+		return $this->belongsTo('App\Project', 'id'); //projectsテーブルとのリレーション
+	}
+
+	public function users()
+	{
+		return $this->belongsTo('App\User', 'id'); //usersテーブルとのリレーション
 	}
 
 

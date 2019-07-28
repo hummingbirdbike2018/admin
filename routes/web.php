@@ -24,18 +24,20 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 	Route::get('home', 'HomeController@index')->name('home');
 	//会員管理
-	Route::get('member/management', 'Auth\MemberController@showMemberList')->name('member.list');
-	Route::post('member/management', 'Auth\MemberController@edit')->name('member.edit');
+	Route::get('member/management', 'UserController@showMemberList')->name('member.list');
+	Route::get('member/edit_status/{id}', 'UserController@showEditForm')->name('member.show');
+	Route::post('member/edit_status/{id}/edit', 'UserController@edit')->name('member.edit');
+	Route::get('member/view_support/{id}', 'UserController@showSupportList')->name('member.support');
 	//起案者管理
-	Route::get('drafter/management', 'Auth\DrafterController@showDrafterList')->name('drafter.list');
-	Route::post('drafter/management', 'Auth\DrafterController@edit')->name('drafter.edit');
+	Route::get('planner/management', 'DrafterController@showPlannerList')->name('planner.list');
+	Route::post('planner/management', 'DrafterController@edit')->name('planner.edit');
 	//プロジェクト管理
-	Route::get('project/management', 'Auth\ProjectController@showProjectList')->name('project.list');
-	Route::post('project/management', 'Auth\ProjectController@edit')->name('project.edit');
-	Route::post('project/management', 'Auth\ProjectController@delete')->name('project.delete');
+	Route::get('project/management', 'ProjectController@showProjectList')->name('project.list');
+	Route::post('project/management', 'ProjectController@edit')->name('project.edit');
+	Route::post('project/management', 'ProjectController@delete')->name('project.delete');
 	//プロジェクト作成
-	Route::get('project/create', 'Auth\ProjectController@showRegisterForm')->name('project.create');
-	Route::post('project/create', 'Auth\ProjectController@create')->name('project.create');
+	Route::get('project/create', 'ProjectController@showRegisterForm')->name('project.create');
+	Route::post('project/create', 'ProjectController@create')->name('project.create');
 });
 
 Auth::routes();

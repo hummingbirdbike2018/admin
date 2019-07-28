@@ -12,12 +12,12 @@ class User extends Authenticatable
 
 	public function supports()
 	{
-		return $this->belongsTo('App\Card', 'user_id');//card_infoテーブルとのリレーション
+		return $this->hasMany('App\Support', 'user_id');//supportsテーブルとのリレーション
 	}
 
 	protected $fillable = [
 		'display', 'name', 'name_kana', 'tel', 'post_code', 'address', 'building',
-		'email', 'password', 'disable', 'dis_reason', 'remember_token',
+		'email', 'password', 'status', 'dis_reason', 'remember_token',
 	];
 
 	/**
