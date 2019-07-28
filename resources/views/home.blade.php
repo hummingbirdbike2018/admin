@@ -17,7 +17,7 @@
 				<div class="card-body">
 					<h5 class="card-title">起案者管理</h5>
 					<p class="card-text">起案者情報閲覧・ステータスの変更</p>
-					<a href="{{ route('drafter.list') }}" class="btn btn-primary">起案者管理画面へ</a>
+					<a href="{{ route('planner.list') }}" class="btn btn-primary">起案者管理画面へ</a>
 				</div>
 			</div>
 		</div>

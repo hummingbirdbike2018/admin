@@ -10,7 +10,10 @@
 		<title>{{ config('app.name', 'CrowdFunding管理画面') }}</title>
 
 		<!-- Scripts -->
+		<script src="{{ asset('js/push_status_edit.js') }}"></script>
+		<script src="{{ asset('js/status.js') }}"></script>
 		<script src="{{ asset('js/app.js') }}" defer></script>
+
 
 		<!-- Fonts -->
 		<link rel="dns-prefetch" href="//fonts.gstatic.com">
