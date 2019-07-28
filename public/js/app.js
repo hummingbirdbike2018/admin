@@ -49218,10 +49218,9 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-var app = new Vue({
-  el: '#app'
-});
+// const app = new Vue({
+// 		el: '#app',
+// });
 
 /***/ }),
 
@@ -49360,9 +49359,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 var edit = new Vue({
-  el: '#success',
+  el: '#edit',
   methods: {
-    popup: function popup() {
+    success: function success() {
       alert("ステータスを変更しました。");
     }
   }
@@ -49377,14 +49376,14 @@ var edit = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-new Vue({
+var status = new Vue({
   el: '#status',
   data: {
     show: false
   },
   methods: {
     handler: function handler(event) {
-      if (event.target.value === 3) {
+      if (event.target.value === "3") {
         this.show = true;
       } else {
         this.show = false;

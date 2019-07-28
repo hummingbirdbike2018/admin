@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 	<div class="container">
 	@foreach($users as $user)
 		<form action="{{ route('member.edit', ['id' => $user->id]) }}" method="POST">
@@ -48,29 +47,34 @@
 						<td class="w-75">
 							<div id="status">
 								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="enable"  v-on:change="handler" value=1 @if ($user->status == 1) checked @endif>
+									<input class="form-check-input" type="radio" name="status" id="enable"  v-on:change="handler" value="1" @if ($user->status == 1) checked @endif>
 									<label class="form-check-label" for="enable">有効</label>
 								</div>
 								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="unsubscribe" v-on:change="handler" value=2 @if ($user->status == 2) checked @endif>
+									<input class="form-check-input" type="radio" name="status" id="unsubscribe" v-on:change="handler" value="2" @if ($user->status == 2) checked @endif>
 									<label class="form-check-label" for="unsubscribe">退会</label>
 								</div>
 								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="disable" v-on:change="handler" value=3 @if ($user->status == 3) checked @endif>
+									<input class="form-check-input" type="radio" name="status" id="disable" v-on:change="handler" value="3" @if ($user->status == 3) checked @endif>
 									<label class="form-check-label" for="disable">無効</label>
 								</div>
 								<p v-if="show">
 									<input type="text" class="form-control" name="dis_reason" id="dis_reason" placeholder="無効理由を入力" value="{{ $user->dis_reason }}">
 								</p>
-						</div>
+							</div>
 						</td>
 				</tr>
 		@endforeach
 			</table>
 			@csrf
 			<div id="edit">
-				<button type="submit" class="btn btn-primary float-right" name="action" v-on:click="success">ステータスを変更する</button>
+				<button type="submit" class="btn btn-primary float-right" name="action" @click="success">ステータスを変更する</button>
 			</div>
 		</form>
 	</div>
+@endsection
+
+@section('scripts')
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
 @endsection
