@@ -1,8 +1,8 @@
 var edit = new Vue({
-	el: '#success',
+	el: '#edit',
 	methods: {
-		popup: function() {
+		success: function() {
 			alert("ステータスを変更しました。");
 		}
 	}
-})
+});
