@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
-use App\Reward;
 use App\Support;
-use App\User;
-use App\Card;
 use Carbon\Carbon;
 use App\Mail\SupportConfirm;
 use Illuminate\Http\Request;

@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Mail;
 class Support extends Model
 {
 
-	const NOT_PAY = 0; //決済未完了
-	const PAID = 1;    //決済完了
 
 	public function rewards()
 	{

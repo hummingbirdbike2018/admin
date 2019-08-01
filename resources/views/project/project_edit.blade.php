@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('breadcrumb')
+<li class="breadcrumb-item"><a href="{{ route('project.list') }}">プロジェクト一覧</a></li>
+<li class="breadcrumb-item active" aria-current="page">プロジェクト編集</a></li>
+@endsection
+
 @section('content')
 	<div class="container">
 	@foreach($users as $user)
@@ -76,5 +81,4 @@
 
 @section('scripts')
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}" defer></script>
 @endsection

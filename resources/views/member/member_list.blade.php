@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page">会員一覧</a></li>
+@endsection
+
 @section('content')
 <div class="border rounded">
 	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th scope="col">ID</th>
+				<th scope="col">アイコン</th>
 				<th scope="col">表示名</th>
 				<th scope="col">名前</th>
 				<th scope="col">ふりがな</th>
@@ -15,7 +20,6 @@
 				<th scope="col">建物名</th>
 				<th scope="col">メールアドレス</th>
 				<th scope="col">登録日</th>
-				<th scope="col">支援履歴</th>
 				<th scope="col">ステータス</th>
 				<th scope="col">無効理由</th>
 			</tr>
@@ -24,6 +28,12 @@
 			@foreach($users as $user)
 			<tr>
 				<td>{{ $user->id }}</td>
+				@if($user->user_img == null)
+				<td><img src="../../../CrowdFunding/public/storage/user_default_img.png" width="30rem" height="30rem"></td>
+				@else
+				<td><img src="../../../CrowdFunding/public/storage/{{ $user->user_img }}" width="30rem" height="30rem"></td>
+				@endif
+
 				@if($user->display != "user_name")
 				<td>{{ $user->display }}</td>
 				@else
@@ -37,7 +47,6 @@
 				<td>{{ $user->building }}</td>
 				<td>{{ $user->email }}</td>
 				<td>{{ date('Y/m/d',  strtotime($user->created_at)) }}</td>
-				<td><a href="{{ route('member.support', ['id' => $user->id]) }}">履歴表示</a></td>
 				<td>
 				@if($user->status === 1)
 					<label><span class="badge badge-success">有効</span>
