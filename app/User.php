@@ -15,8 +15,9 @@ class User extends Authenticatable
 		return $this->hasMany('App\Support', 'user_id');//supportsテーブルとのリレーション
 	}
 
+
 	protected $fillable = [
-		'display', 'name', 'name_kana', 'tel', 'post_code', 'address', 'building',
+		'display', 'user_image', 'name', 'name_kana', 'tel', 'post_code', 'address', 'building',
 		'email', 'password', 'status', 'dis_reason', 'remember_token',
 	];
 

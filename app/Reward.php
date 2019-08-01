@@ -22,5 +22,6 @@ class Reward extends Model
 	protected $fillable = [
 		 'id', 'rw_title',
 		 'rw_body', 'rw_image', 'rw_quantity', 'rw_price', 'rw_season',
+		 'status', 'dis_reason',
 	 ];
 }
