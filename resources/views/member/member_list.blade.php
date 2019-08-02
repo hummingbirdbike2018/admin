@@ -34,7 +34,7 @@
 				<td><img src="../../../CrowdFunding/public/storage/{{ $user->user_img }}" width="30rem" height="30rem"></td>
 				@endif
 
-				@if($user->display != "user_name")
+				@if($user->display != null)
 				<td>{{ $user->display }}</td>
 				@else
 				<td>未設定</td>
