@@ -26,7 +26,7 @@ class Support extends Model
 
 
 	protected $fillable = [
-		 'reward_id', 'user_id', 'pj_id','comment','settlement'
+		 'id', 'reward_id', 'user_id', 'pj_id','comment','settlement'
 	 ];
 
 }

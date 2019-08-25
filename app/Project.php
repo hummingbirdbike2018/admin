@@ -20,7 +20,7 @@ class Project extends Model
 	}
 
 	protected $fillable = [
-		'pj_title', 'target_amount',
+		'id', 'pj_title', 'target_amount',
 		'product_detail_1', 'product_detail_2', 'product_detail_3',
 		'product_img_1', 'product_img_2', 'product_img_3', 'status', 'dis_reason'
 	];

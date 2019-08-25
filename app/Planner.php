@@ -12,7 +12,7 @@ class Planner extends Model
 	}
 
 	protected $fillable = [
-		'name', 'name_kana', 'tel', 'post_code', 'address', 'building',
+		'id', 'name', 'name_kana', 'tel', 'post_code', 'address', 'building',
 		'email', 'status', 'intro', 'icon_img', 'dis_reason', 'remember_token',
 	];
 

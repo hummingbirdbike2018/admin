@@ -64,7 +64,7 @@
 									<label class="form-check-label" for="disable">無効</label>
 								</div>
 								<p v-if="show">
-									<input type="text" class="form-control" name="dis_reason" id="dis_reason" placeholder="無効理由を入力" value="{{ $user->dis_reason }}">
+									<input type="text" class="form-control mt-2" name="dis_reason" id="dis_reason" placeholder="無効理由を入力" value="{{ $user->dis_reason }}">
 								</p>
 							</div>
 						</td>
