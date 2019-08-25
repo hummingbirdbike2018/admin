@@ -18,24 +18,24 @@
 				<th scope="col">総支援者数</th>
 				<th scope="col">開始日</th>
 				<th scope="col">終了日</th>
-				<th scope="col">募集期間</th>
+				<th scope="col">残り日数</th>
 				<th scope="col">ステータス</th>
 				<th scope="col">キャンセル理由</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($projects as $project)
+			@foreach($projects as $key => $project)
 			<tr>
 				<td>{{ $project->id }}</td>
 				<td>{{ $project->pj_title }}</td>
-				<td>{{ $project->planner_id }}</td>
+				<td>{{ $planners_list[$key] }}</td>
 				<td>¥ {{ number_format($project->target_amount) }}</td>
-				<td>{{ $percent_complete }} %</td>
-				<td>¥ {{ number_format($total_amount) }}</td>
-				<td>{{ $total_supporter }} 人</td>
+				<td> {{ $percent_completes[$key] }}%</td>
+				<td>¥ {{ $total_amount_list[$key] }}</td>
+				<td> {{ $supporter_list[$key] }}人</td>
 				<td>{{ date('Y/m/d',  strtotime($project->created_at)) }}</td>
-				<td>{{ date('Y/m/d',  strtotime($end_day)) }}</td>
-				<td>{{ $project->period }} 日</td>
+				<td>{{ date('Y/m/d',  strtotime($end_day[$key])) }}</td>
+				<td>{{ $period[$key] }}日</td>
 				<td>
 				@if($project->status === 1)
 					<label><span class="badge badge-success">有効</span>
